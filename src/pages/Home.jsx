@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import {
   BookOpen,
   Users,
-  Award,
   Calendar,
   ArrowRight,
   CheckCircle,
@@ -102,7 +101,7 @@ const Home = () => {
       <section className="py-16 gradient-bg opacity-85 relative overflow-hidden">
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#9a1b1f]/20 to-transparent"></div>
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Nuestros Programas</h2>
+          <h2 className="section-title">Nuestros Procesos de Admisión</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="highlight-card">
               <div className="flex items-center mb-4">
@@ -110,29 +109,30 @@ const Home = () => {
                   <span className="font-bold">1</span>
                 </div>
                 <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Ciclo Regular
+                  Ceprunsa Fase I y II
                 </h3>
               </div>
               <p className="text-gray-600 mb-4">
-                Programa completo de preparación para el examen de admisión con
-                duración de 4 meses.
+                Proceso regular dirigido a estudiantes egresados y cursantes del
+                último año de secundaria, con clases virtuales y exámenes
+                presenciales.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Todas las materias del examen</span>
+                  <span>Preparación integral en todas las materias</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Simulacros semanales</span>
+                  <span>Simulacros tipo examen de admisión</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Material completo</span>
+                  <span>Duración de 10 semanas</span>
                 </li>
               </ul>
               <Link
-                to="/programas"
+                to="/procesos"
                 className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
               >
                 Más información
@@ -146,29 +146,29 @@ const Home = () => {
                   <span className="font-bold">2</span>
                 </div>
                 <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Ciclo Intensivo
+                  Ceprunsa Ciclo Quintos
                 </h3>
               </div>
               <p className="text-gray-600 mb-4">
-                Preparación acelerada con enfoque en los temas más importantes
-                del examen.
+                Exclusivo para estudiantes de 5to de secundaria, con horarios
+                compatibles con sus estudios escolares.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Duración de 2 meses</span>
+                  <span>Preparación integral en todas las materias</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Enfoque en temas clave</span>
+                  <span>Horarios adaptados a los escolares</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Asesoría personalizada</span>
+                  <span>Simulacros tipo examen de admisión</span>
                 </li>
               </ul>
               <Link
-                to="/programas"
+                to="/procesos"
                 className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
               >
                 Más información
@@ -182,29 +182,30 @@ const Home = () => {
                   <span className="font-bold">3</span>
                 </div>
                 <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Ciclo de Verano
+                  Extraordinario
                 </h3>
               </div>
               <p className="text-gray-600 mb-4">
-                Aprovecha tus vacaciones para prepararte para el examen de
-                admisión.
+                Proceso especial para postulantes con perfiles específicos,
+                reconociendo méritos académicos, deportivos y situaciones
+                particulares.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Horarios especiales</span>
+                  <span>Titulados y primeros puestos</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Grupos reducidos</span>
+                  <span>Deportistas destacados</span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Actividades complementarias</span>
+                  <span>Bachillerato Internacional y COAR</span>
                 </li>
               </ul>
               <Link
-                to="/programas"
+                to="/procesos"
                 className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
               >
                 Más información
@@ -216,7 +217,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 dots-pattern">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Lo que dicen nuestros estudiantes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

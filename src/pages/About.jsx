@@ -9,6 +9,13 @@ import {
   Workflow,
   BarChart,
   GraduationCap,
+  CheckCircle,
+  Clock,
+  Users,
+  Bookmark,
+  Flag,
+  Scale,
+  Handshake,
 } from "lucide-react";
 
 const About = () => {
@@ -95,11 +102,9 @@ const About = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title mb-12">Misión y Visión</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="card border-t-4 border-t-[#9a1b1f] hover:shadow-lg transition-shadow">
-              <div className="flex justify-center">
-                <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                  <Target className="h-12 w-12 text-[#9a1b1f]" />
-                </div>
+            <div className="card border-t-4 border-t-[#9a1b1f] hover:shadow-lg transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Target className="h-12 w-12 text-[#9a1b1f]" />
               </div>
 
               <h2 className="text-2xl font-bold text-[#9a1b1f] mb-4 text-center">
@@ -116,11 +121,9 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card border-t-4 border-t-[#9a1b1f] hover:shadow-lg transition-shadow ">
-              <div className="flex justify-center">
-                <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                  <Eye className="h-12 w-12 text-[#9a1b1f]" />
-                </div>
+            <div className="card border-t-4 border-t-[#9a1b1f] hover:shadow-lg transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Eye className="h-12 w-12 text-[#9a1b1f]" />
               </div>
               <h2 className="text-2xl font-bold text-[#9a1b1f] mb-4 text-center">
                 Visión
@@ -265,12 +268,10 @@ const About = () => {
         <div className="absolute inset-0 opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="section-title">Nuestros Valores</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-br from-[#9a1b1f] to-[#7a1518] p-4 rounded-full shadow-md">
-                  <Award className="h-12 w-12 text-white" />
-                </div>
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Award className="h-12 w-12 text-[#9a1b1f]" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
                 Excelencia académica
@@ -283,10 +284,8 @@ const About = () => {
             </div>
 
             <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-br from-[#9a1b1f] to-[#7a1518] p-4 rounded-full shadow-md">
-                  <Shield className="h-12 w-12 text-white" />
-                </div>
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Shield className="h-12 w-12 text-[#9a1b1f]" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
                 Confianza
@@ -298,10 +297,8 @@ const About = () => {
             </div>
 
             <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-br from-[#9a1b1f] to-[#7a1518] p-4 rounded-full shadow-md">
-                  <Heart className="h-12 w-12 text-white" />
-                </div>
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Heart className="h-12 w-12 text-[#9a1b1f]" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
                 Empatía
@@ -314,10 +311,8 @@ const About = () => {
             </div>
 
             <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-br from-[#9a1b1f] to-[#7a1518] p-4 rounded-full shadow-md">
-                  <Lightbulb className="h-12 w-12 text-white" />
-                </div>
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Lightbulb className="h-12 w-12 text-[#9a1b1f]" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
                 Innovación
@@ -325,6 +320,101 @@ const About = () => {
               <p className="text-gray-600 text-center">
                 Fomentar la creatividad y el pensamiento original para generar
                 nuevas ideas y soluciones para los desafíos presentes.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <CheckCircle className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Responsabilidad
+              </h3>
+              <p className="text-gray-600 text-center">
+                Cumplir con las obligaciones académicas y laborales con ética y
+                eficiencia. Promover el sentido del deber en toda la comunidad.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Clock className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Puntualidad
+              </h3>
+              <p className="text-gray-600 text-center">
+                Respetar el tiempo propio y ajeno, asegurando la puntualidad en
+                todas las actividades. Cumplir con los compromisos a tiempo.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Users className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Trabajo en equipo
+              </h3>
+              <p className="text-gray-600 text-center">
+                Fomentar la colaboración y cooperación entre todos los miembros.
+                Trabajar juntos para alcanzar metas comunes.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Bookmark className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Compromiso
+              </h3>
+              <p className="text-gray-600 text-center">
+                Dedicarse a los valores y objetivos de CEPRUNSA con
+                responsabilidad. Asumir un compromiso personal y colectivo en el
+                proceso educativo.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Handshake className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Respeto
+              </h3>
+              <p className="text-gray-600 text-center">
+                Fomentar la consideración y el trato digno hacia los demás,
+                valorando la diversidad de ideas y opiniones. Promover un
+                ambiente de convivencia basado en el respeto mutuo.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Scale className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Probidad
+              </h3>
+              <p className="text-gray-600 text-center">
+                Actuar con integridad y honestidad en todas las acciones y
+                decisiones. Mantener una conducta ética que refleje los
+                principios de transparencia y rectitud.
+              </p>
+            </div>
+
+            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
+              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                <Flag className="h-12 w-12 text-[#9a1b1f]" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                Lealtad
+              </h3>
+              <p className="text-gray-600 text-center">
+                Ser fiel a los valores y objetivos de CEPRUNSA, mostrando un
+                compromiso constante. Apoyar con sinceridad y confianza a la
+                institución y a sus integrantes.
               </p>
             </div>
           </div>
@@ -338,7 +428,7 @@ const About = () => {
           <h2 className="section-title">Autoridades</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="card hover:shadow-xl transition-all border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
+            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
               <div className="relative mb-6">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mg.-Arnaldo-Valdivia-Loaiza-WJKoRNZFlxcLBYctFxuYAU22Ebwahz.jpeg"
@@ -372,7 +462,7 @@ const About = () => {
                 en enseñanza e innovación.
               </p>
             </div>
-            <div className="card hover:shadow-xl transition-all border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
+            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
               <div className="relative mb-6">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dr.-Maria-Elena-Rojas-Zegarra.jpg-2Q53KaD23rQ5BWytlJ1o5vNkQGOkGt.jpeg"
@@ -405,7 +495,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card hover:shadow-xl transition-all border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
+            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
               <div className="relative mb-6">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mg.-Jose-Rojas-Hualpa-1-Acs8aSpgD3EDMJdn8XnzVJxuOFd0go.jpeg"

@@ -356,7 +356,7 @@ const Contact = () => {
             <h2 className="section-title mb-0">Preguntas frecuentes</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] bg-gradient-to-r from-[#9a1b1f]/5 to-white">
+            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] ">
               <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
                 ¿Cuándo inician las inscripciones?
               </h3>
@@ -368,7 +368,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37] bg-gradient-to-r from-[#d4af37]/5 to-white">
+            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37]">
               <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
                 ¿Qué documentos necesito para inscribirme?
               </h3>
@@ -379,7 +379,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] bg-gradient-to-r from-[#9a1b1f]/5 to-white">
+            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] ">
               <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
                 ¿Ofrecen becas o descuentos?
               </h3>
@@ -391,7 +391,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37] bg-gradient-to-r from-[#d4af37]/5 to-white">
+            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37] ">
               <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
                 ¿Puedo cambiar de horario durante el ciclo?
               </h3>
@@ -402,15 +402,6 @@ const Contact = () => {
                 coordinación académica.
               </p>
             </div>
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="#"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#9a1b1f] to-[#7a1518] text-white rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
-            >
-              <HelpCircle className="h-5 w-5 mr-2" />
-              Ver más preguntas frecuentes
-            </a>
           </div>
         </div>
       </section>
