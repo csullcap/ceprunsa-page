@@ -26,8 +26,8 @@ const Home = () => {
                 a la Universidad Nacional de San Agustín de Arequipa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/programas" className="btn-primary text-center">
-                  Conoce nuestros programas
+                <Link to="/procesos" className="btn-primary text-center">
+                  Conoce nuestros procesos de admisión
                 </Link>
                 <Link to="/contacto" className="btn-secondary text-center">
                   Contáctanos

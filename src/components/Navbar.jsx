@@ -93,6 +93,16 @@ const Navbar = () => {
             >
               Contacto
             </NavLink>
+            <NavLink
+              to="/trabaja-con-nosotros"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#9a1b1f] font-medium border-b-2 border-[#9a1b1f] pb-1"
+                  : "text-gray-700 hover:text-[#9a1b1f] hover:border-b-2 hover:border-[#9a1b1f] pb-1 transition-all"
+              }
+            >
+              Trabaja con Nosotros
+            </NavLink>
           </nav>
 
           <div className="hidden md:block">
@@ -163,6 +173,17 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               Contacto
+            </NavLink>
+            <NavLink
+              to="/trabaja-con-nosotros"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#9a1b1f] font-medium py-2 border-l-3 pl-2"
+                  : "text-gray-700 hover:text-[#9a1b1f] py-2 "
+              }
+              onClick={closeMenu}
+            >
+              Trabaja con Nosotros
             </NavLink>
             <a
               href="https://apps.unsa.edu.pe/sisadmision/public/"

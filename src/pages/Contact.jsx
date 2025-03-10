@@ -11,8 +11,70 @@ import {
   Youtube,
   MessageSquare,
   Send,
-  HelpCircle,
+  AlertCircle,
+  CheckCircle,
 } from "lucide-react";
+
+// Componente de acordeón para preguntas frecuentes
+const FaqAccordion = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div
+      className={`border border-gray-100 rounded-lg overflow-hidden transition-all duration-300 ${
+        isOpen ? "shadow-md" : "shadow-sm"
+      }`}
+    >
+      <button
+        className={`w-full text-left p-4 flex justify-between items-center focus:outline-none ${
+          isOpen ? "bg-[#f9e6e7]" : "bg-white hover:bg-gray-50"
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3
+          className={`font-bold text-lg ${
+            isOpen ? "text-[#9a1b1f]" : "text-gray-800"
+          }`}
+        >
+          {question}
+        </h3>
+        <div
+          className={`transform transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-5 w-5 ${isOpen ? "text-[#9a1b1f]" : "text-gray-500"}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="p-4 bg-white border-t border-gray-50">
+          {typeof answer === "string" ? (
+            <p className="text-gray-700">{answer}</p>
+          ) : (
+            answer
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +89,7 @@ const Contact = () => {
     submitted: false,
     success: false,
     message: "",
+    loading: false,
   });
 
   const handleChange = (e) => {
@@ -37,22 +100,35 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulación de envío de formulario
+
+    // Iniciar estado de carga
     setFormStatus({
-      submitted: true,
-      success: true,
-      message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
-    });
-    // Resetear formulario después de envío exitoso
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
+      submitted: false,
+      success: false,
       message: "",
+      loading: true,
     });
+
+    // Simulación de envío (reemplazar con tu lógica de envío real)
+    setTimeout(() => {
+      setFormStatus({
+        submitted: true,
+        success: true,
+        message: "¡Gracias por contactarnos! Te responderemos a la brevedad.",
+        loading: false,
+      });
+
+      // Resetear formulario después de envío exitoso
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    }, 1500);
   };
 
   return (
@@ -186,13 +262,18 @@ const Contact = () => {
 
                 {formStatus.submitted && (
                   <div
-                    className={`p-4 mb-6 rounded-md ${
+                    className={`p-4 mb-6 rounded-md flex items-start ${
                       formStatus.success
-                        ? "bg-green-100 text-green-700 border border-green-200"
-                        : "bg-red-100 text-red-700 border border-red-200"
+                        ? "bg-green-50 text-green-700 border border-green-200"
+                        : "bg-red-50 text-red-700 border border-red-200"
                     }`}
                   >
-                    {formStatus.message}
+                    {formStatus.success ? (
+                      <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span>{formStatus.message}</span>
                   </div>
                 )}
 
@@ -214,6 +295,7 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a1b1f] focus:border-transparent bg-gray-50 focus:bg-white transition-colors"
                         placeholder="Ingresa tu nombre completo"
+                        disabled={formStatus.loading}
                       />
                     </div>
 
@@ -233,6 +315,7 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a1b1f] focus:border-transparent bg-gray-50 focus:bg-white transition-colors"
                         placeholder="ejemplo@correo.com"
+                        disabled={formStatus.loading}
                       />
                     </div>
                   </div>
@@ -253,6 +336,7 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a1b1f] focus:border-transparent bg-gray-50 focus:bg-white transition-colors"
                         placeholder="(Opcional) 999-999-999"
+                        disabled={formStatus.loading}
                       />
                     </div>
 
@@ -272,6 +356,7 @@ const Contact = () => {
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a1b1f] focus:border-transparent bg-gray-50 focus:bg-white transition-colors"
                         placeholder="¿En qué podemos ayudarte?"
+                        disabled={formStatus.loading}
                       />
                     </div>
                   </div>
@@ -292,16 +377,50 @@ const Contact = () => {
                       rows="5"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a1b1f] focus:border-transparent bg-gray-50 focus:bg-white transition-colors"
                       placeholder="Escribe tu mensaje aquí..."
+                      disabled={formStatus.loading}
                     ></textarea>
                   </div>
 
                   <div>
                     <button
                       type="submit"
-                      className="btn-primary flex items-center justify-center w-full md:w-auto"
+                      className={`btn-primary flex items-center justify-center w-full md:w-auto ${
+                        formStatus.loading
+                          ? "opacity-70 cursor-not-allowed"
+                          : ""
+                      }`}
+                      disabled={formStatus.loading}
                     >
-                      <Send className="h-4 w-4 mr-2" />
-                      Enviar mensaje
+                      {formStatus.loading ? (
+                        <>
+                          <svg
+                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          Enviando mensaje...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4 mr-2" />
+                          Enviar mensaje
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>
@@ -355,53 +474,72 @@ const Contact = () => {
           <div className="flex items-center justify-center mb-8">
             <h2 className="section-title mb-0">Preguntas frecuentes</h2>
           </div>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] ">
-              <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
-                ¿Cuándo inician las inscripciones?
-              </h3>
-              <p className="text-gray-700">
-                Las inscripciones para nuestros diferentes ciclos se abren
-                aproximadamente un mes antes del inicio de clases. Te
-                recomendamos estar atento a nuestras redes sociales y página web
-                para conocer las fechas exactas.
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <FaqAccordion
+              question="¿Cómo puedo ingresar a las clases del CEPRUNSA?"
+              answer={
+                <div className="space-y-2">
+                  <p>Para ingresar a las clases, sigue estos pasos:</p>
+                  <ol className="list-decimal pl-5 space-y-1">
+                    <li>
+                      Utiliza la cuenta CEPRUNSA que se te brindó al momento de
+                      tu inscripción.
+                    </li>
+                    <li>
+                      Ingresa a la plataforma Google Classroom con dicha cuenta.
+                    </li>
+                    <li>
+                      Desde el Classroom, accede al enlace de Google Meet
+                      correspondiente para unirte a la sesión.
+                    </li>
+                  </ol>
+                </div>
+              }
+            />
 
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37]">
-              <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
-                ¿Qué documentos necesito para inscribirme?
-              </h3>
-              <p className="text-gray-700">
-                Para inscribirte necesitas presentar tu DNI, una fotografía
-                tamaño carnet y, en caso de ser menor de edad, debes venir
-                acompañado de un apoderado.
-              </p>
-            </div>
+            <FaqAccordion
+              question="¿Cómo puedo realizar el pago de las cuotas?"
+              answer={
+                <div className="space-y-2">
+                  <p>
+                    El pago de las cuotas se realiza con el código brindado al
+                    momento de tu inscripción. Puedes realizarlo a través de
+                    cualquier canal del BCP, como:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Agentes BCP</li>
+                    <li>Banca móvil</li>
+                    <li>Banca por internet</li>
+                    <li>Yape</li>
+                  </ul>
+                  <p>
+                    En todos estos canales, utiliza la cuenta{" "}
+                    <strong>UNSA-VIRTUAL</strong> para completar la transacción.
+                  </p>
+                </div>
+              }
+            />
 
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#9a1b1f] ">
-              <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
-                ¿Ofrecen becas o descuentos?
-              </h3>
-              <p className="text-gray-700">
-                Sí, ofrecemos becas por rendimiento académico y descuentos para
-                hermanos, hijos de docentes UNSA y para estudiantes de bajos
-                recursos. Para más información, puedes acercarte a nuestras
-                oficinas o contactarnos directamente.
-              </p>
-            </div>
-
-            <div className="card hover:shadow-lg transition-all border-l-4 border-l-[#d4af37] ">
-              <h3 className="text-xl font-bold text-[#9a1b1f] mb-2">
-                ¿Puedo cambiar de horario durante el ciclo?
-              </h3>
-              <p className="text-gray-700">
-                Sí, es posible cambiar de horario durante el ciclo, siempre y
-                cuando haya disponibilidad en el horario al que deseas
-                cambiarte. Debes solicitar el cambio en la oficina de
-                coordinación académica.
-              </p>
-            </div>
+            <FaqAccordion
+              question="¿Puedo retirarme o solicitar la exoneración de cuotas del CEPRUNSA?"
+              answer={
+                <div className="space-y-2">
+                  <p>
+                    Según el Reglamento de Admisión, aprobado con Resolución de
+                    Consejo Universitario N° 219-2024, de fecha 21 de mayo del
+                    2024, establece:
+                  </p>
+                  <p>
+                    <strong>Artículo 64°:</strong> El postulante no puede
+                    solicitar, bajo ningún concepto:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>64.1. Devolución y/o reembolso del monto abonado.</li>
+                    <li>64.2. Exoneración de deuda.</li>
+                  </ul>
+                </div>
+              }
+            />
           </div>
         </div>
       </section>

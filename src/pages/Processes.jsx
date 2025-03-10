@@ -214,10 +214,11 @@ const Processes = () => {
                         <CheckCircle className="h-5 w-5 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-bold text-sm">
-                            Asesoría personalizada
+                            Asesoría Psicologica
                           </h4>
                           <p className="text-gray-600 text-xs">
-                            Atención a consultas académicas y orientación
+                            Atencion en el Consultorio Psicologico de Ceprunsa
+                            en diferentes servicios incluyendo orientación
                             vocacional
                           </p>
                         </div>
@@ -229,8 +230,8 @@ const Processes = () => {
                             Recursos adicionales
                           </h4>
                           <p className="text-gray-600 text-xs">
-                            Acceso a biblioteca virtual y materiales
-                            complementarios
+                            Acceso a talleres y charlas con enfoque a afrontar
+                            la vida universitaria
                           </p>
                         </div>
                       </div>
@@ -263,9 +264,6 @@ const Processes = () => {
                         <Bookmark className="h-4 w-4 mr-1" />
                         Exclusivo 5to de Secundaria
                       </span>
-                      <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-sm">
-                        Ciclo Quintos
-                      </h2>
                       <p className="text-white/90 text-sm">
                         Prepárate mientras terminas el colegio
                       </p>
@@ -276,7 +274,7 @@ const Processes = () => {
                   <div className="flex items-center mb-4">
                     <div className="h-8 w-1 bg-[#d4af37] rounded-full mr-3"></div>
                     <h3 className="text-2xl font-bold text-[#9a1b1f]">
-                      Ciclo Especial para 5to de Secundaria
+                      Ceprunsa Ciclo Quintos
                     </h3>
                   </div>
 
@@ -355,11 +353,11 @@ const Processes = () => {
                         <CheckCircle className="h-5 w-5 text-[#d4af37] mr-2 mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-bold text-sm">
-                            Enfoque estratégico
+                            Examenes Simulacros
                           </h4>
                           <p className="text-gray-600 text-xs">
-                            Contenido centrado en temas de mayor incidencia en
-                            el examen
+                            Evaluaciones que replican el formato del examen de
+                            admisión
                           </p>
                         </div>
                       </div>
@@ -367,10 +365,12 @@ const Processes = () => {
                         <CheckCircle className="h-5 w-5 text-[#d4af37] mr-2 mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-bold text-sm">
-                            Orientación vocacional
+                            Asesoría Psicologica
                           </h4>
                           <p className="text-gray-600 text-xs">
-                            Asesoría para elegir la carrera adecuada a tu perfil
+                            Atencion en el Consultorio Psicologico de Ceprunsa
+                            en diferentes servicios incluyendo orientación
+                            vocacional
                           </p>
                         </div>
                       </div>
@@ -378,10 +378,11 @@ const Processes = () => {
                         <CheckCircle className="h-5 w-5 text-[#d4af37] mr-2 mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-bold text-sm">
-                            Ventaja competitiva
+                            Recursos adicionales
                           </h4>
                           <p className="text-gray-600 text-xs">
-                            Preparación anticipada para asegurar tu ingreso
+                            Acceso a talleres y charlas con enfoque a afrontar
+                            la vida universitaria
                           </p>
                         </div>
                       </div>
@@ -414,9 +415,6 @@ const Processes = () => {
                         <Star className="h-4 w-4 mr-1" />
                         Admisión Especial
                       </span>
-                      <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-sm">
-                        Extraordinario
-                      </h2>
                       <p className="text-white/90 text-sm">
                         Reconocimiento al mérito y la diversidad
                       </p>
@@ -427,7 +425,7 @@ const Processes = () => {
                   <div className="flex items-center mb-4">
                     <div className="h-8 w-1 bg-[#9a1b1f] rounded-full mr-3"></div>
                     <h3 className="text-2xl font-bold text-[#9a1b1f]">
-                      Proceso de Admisión Extraordinario
+                      Examen Extraordinario
                     </h3>
                   </div>
 
