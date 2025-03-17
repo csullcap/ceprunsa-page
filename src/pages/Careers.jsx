@@ -6,7 +6,6 @@ import {
   ExternalLink,
   ChevronRight,
   CheckCircle,
-  Download,
   Briefcase,
   GraduationCap,
   Eye,
@@ -64,12 +63,6 @@ const Careers = () => {
                     Desarrollo profesional y posibilidades de crecimiento
                   </p>
                 </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    Vinculación con la Universidad Nacional de San Agustín
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -86,360 +79,349 @@ const Careers = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title mb-12">Posiciones Disponibles</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-8 max-w-6xl mx-auto">
             {/* Position 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
-              <div className="bg-[#9a1b1f] p-4">
-                <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 mx-auto backdrop-blur-sm">
-                  <GraduationCap className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white text-center">
-                  Prestador de Servicio de Enseñanza
-                </h3>
-              </div>
-
-              <div className="p-6">
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Briefcase className="h-4 w-4 mr-2" />
-                    Responsabilidades:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Impartir clases en las áreas de especialidad</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Elaborar material didáctico y evaluaciones</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Brindar asesoría académica a los estudiantes</span>
-                    </li>
-                  </ul>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
+                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
+                    <GraduationCap className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white text-center">
+                    Personal de Servicio de Enseñanza
+                  </h3>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Eye className="h-4 w-4 mr-2" />
-                    Requisitos:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Título profesional en el área de especialidad</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Experiencia mínima de 2 años en docencia</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Dominio de estrategias pedagógicas</span>
-                    </li>
-                  </ul>
-                </div>
+                <div className="p-6 md:w-3/4">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2">
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Eye className="h-4 w-4 mr-2" />
+                          Misión del puesto:
+                        </h4>
+                        <p className="text-gray-700 text-sm">
+                          Brindar un servicio de enseñanza de calidad para la
+                          preparación académico de los postulantes.
+                        </p>
+                      </div>
 
-                <div>
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Modalidad:
-                  </h4>
-                  <p className="text-gray-700 text-sm">
-                    Presencial y virtual, según requerimiento
-                  </p>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Briefcase className="h-4 w-4 mr-2" />
+                          Funciones específicas:
+                        </h4>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Planificar y ejecutar los temas asignados
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Elaborar material académico y evaluaciones
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Desarrollar estrategias de enseñanza-aprendizaje
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Elaborar preguntas para exámenes simulacros
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Entregar material académico al área
+                              correspondiente
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Cumplir con la planificación académica establecida
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Clock className="h-4 w-4 mr-2" />
+                          Requisitos:
+                        </h4>
+                        <div className="bg-gray-50 p-3 rounded-lg">
+                          <ul className="space-y-2 text-gray-700 text-sm">
+                            <li className="flex items-start">
+                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                              <span>Experiencia en enseñanza y/o docencia</span>
+                            </li>
+                            <li className="flex items-start">
+                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                              <span>
+                                Bachiller universitario y/o titulado registrado
+                                en SUNEDU o titulado de instituto pedagógico
+                                registrado en DRE
+                              </span>
+                            </li>
+                            <li className="flex items-start">
+                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                              <span>
+                                Cursos en estrategias pedagógicas y recursos
+                                educativos digitales
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col space-y-3">
+                        <a
+                          href="https://forms.google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex items-center group text-sm justify-center"
+                        >
+                          Postular a esta posición
+                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </a>
+
+                        <a
+                          href="#"
+                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
+                        >
+                          Mas Información
+                          <FileText className="h-4 w-4 ml-2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Position 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
-              <div className="bg-[#9a1b1f] p-4">
-                <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 mx-auto backdrop-blur-sm">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white text-center">
-                  Monitor
-                </h3>
-              </div>
-
-              <div className="p-6">
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Briefcase className="h-4 w-4 mr-2" />
-                    Responsabilidades:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Supervisar el desarrollo de las clases virtuales
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Asistir a docentes y estudiantes en el uso de
-                        plataformas
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Registrar asistencia y participación de estudiantes
-                      </span>
-                    </li>
-                  </ul>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
+                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white text-center">
+                    Personal de Servicio de Monitoreo
+                  </h3>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Eye className="h-4 w-4 mr-2" />
-                    Requisitos:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Estudiante universitario de últimos ciclos o egresado
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Dominio de herramientas digitales educativas</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Excelentes habilidades de comunicación</span>
-                    </li>
-                  </ul>
-                </div>
+                <div className="p-6 md:w-3/4">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2">
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Eye className="h-4 w-4 mr-2" />
+                          Misión del puesto:
+                        </h4>
+                        <p className="text-gray-700 text-sm">
+                          Brindar soporte administrativo en el desarrollo de las
+                          actividades diarias académicas en el proceso de
+                          admisión correspondiente del CEPRUNSA.
+                        </p>
+                      </div>
 
-                <div>
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Modalidad:
-                  </h4>
-                  <p className="text-gray-700 text-sm">
-                    Virtual, con posibilidad de actividades presenciales
-                  </p>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Briefcase className="h-4 w-4 mr-2" />
+                          Funciones específicas:
+                        </h4>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Programar sesiones virtuales del salón asignado
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Orientar a postulantes sobre procedimientos
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Verificar cumplimiento del contenido temático
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Monitorear avance curricular</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Mantener el orden en las sesiones de clase
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>
+                              Controlar asistencia de docentes y estudiantes
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Clock className="h-4 w-4 mr-2" />
+                          Requisitos:
+                        </h4>
+                        <div className="bg-gray-50 p-3 rounded-lg">
+                          <p className="text-gray-700 text-sm">
+                            Ser alumno regular, mayor de edad, con matrícula
+                            vigente de la Universidad Nacional de San Agustín
+                            que no presente otros beneficios del estado.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col space-y-3">
+                        <a
+                          href="https://forms.google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex items-center group text-sm justify-center"
+                        >
+                          Postular a esta posición
+                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </a>
+
+                        <a
+                          href="#"
+                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
+                        >
+                          Mas Información
+                          <FileText className="h-4 w-4 ml-2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Position 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
-              <div className="bg-[#9a1b1f] p-4">
-                <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 mx-auto backdrop-blur-sm">
-                  <ClipboardCheck className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white text-center">
-                  Supervisor de Monitoreo
-                </h3>
-              </div>
-
-              <div className="p-6">
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Briefcase className="h-4 w-4 mr-2" />
-                    Responsabilidades:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Coordinar y supervisar el equipo de monitores</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Elaborar informes de seguimiento y evaluación</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Implementar mejoras en los procesos de monitoreo
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mb-4">
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Eye className="h-4 w-4 mr-2" />
-                    Requisitos:
-                  </h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Título profesional en educación o áreas afines
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>Experiencia en gestión de equipos</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                      <span>
-                        Capacidad de análisis y resolución de problemas
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                    <Clock className="h-4 w-4 mr-2" />
-                    Modalidad:
-                  </h4>
-                  <p className="text-gray-700 text-sm">
-                    Híbrido (presencial y virtual)
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Application Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#9a1b1f] mb-6">
-              ¿Cómo postular?
-            </h2>
-            <p className="text-gray-700 mb-8">
-              Si estás interesado en formar parte de nuestro equipo, completa el
-              formulario de postulación con tus datos y adjunta tu CV
-              actualizado. Nuestro equipo de recursos humanos revisará tu
-              información y se pondrá en contacto contigo si tu perfil se ajusta
-              a nuestras necesidades.
-            </p>
-
-            <a
-              href="https://forms.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center group"
-            >
-              Formulario de postulación
-              <ExternalLink className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-100">
-              <p className="text-gray-600 text-sm">
-                <strong>Nota:</strong> Las postulaciones son evaluadas
-                periódicamente según las necesidades institucionales. Te
-                recomendamos mantener tu información actualizada en nuestra base
-                de datos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Documents Section */}
-      <section className="py-16 bg-gradient-to-b gradient-bg opacity-85 relative">
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#9a1b1f]/20 to-transparent"></div>
-        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#9a1b1f]/20 to-transparent"></div>
-        <div className="container mx-auto px-4">
-          <h2 className="section-title mb-12">Documentos de Interés</h2>
-
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-l-[#9a1b1f] hover:shadow-lg transition-all">
-              <div className="flex items-start">
-                <div className="bg-[#f9e6e7] p-3 rounded-full mr-4">
-                  <FileText className="h-6 w-6 text-[#9a1b1f]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-[#9a1b1f] mb-2">
-                    Reglamento Interno
+            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+              <div className="flex flex-col md:flex-row">
+                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
+                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
+                    <ClipboardCheck className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white text-center">
+                    Coordinador de Monitoreo
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Documento que establece las normas y procedimientos que
-                    rigen el funcionamiento de CEPRUNSA.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-[#9a1b1f] font-medium hover:underline group"
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Descargar PDF
-                  </a>
                 </div>
-              </div>
-            </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-l-[#9a1b1f] hover:shadow-lg transition-all">
-              <div className="flex items-start">
-                <div className="bg-[#f9e6e7] p-3 rounded-full mr-4">
-                  <FileText className="h-6 w-6 text-[#9a1b1f]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-[#9a1b1f] mb-2">
-                    Código de Ética
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Principios y valores que guían el comportamiento de todos
-                    los miembros de nuestra institución.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-[#9a1b1f] font-medium hover:underline group"
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Descargar PDF
-                  </a>
-                </div>
-              </div>
-            </div>
+                <div className="p-6 md:w-3/4">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2">
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Eye className="h-4 w-4 mr-2" />
+                          Misión del puesto:
+                        </h4>
+                        <p className="text-gray-700 text-sm">
+                          Asegurar el correcto desempeño del equipo de monitores
+                          y el cumplimiento de los estándares de monitoreo.
+                        </p>
+                      </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-l-[#9a1b1f] hover:shadow-lg transition-all">
-              <div className="flex items-start">
-                <div className="bg-[#f9e6e7] p-3 rounded-full mr-4">
-                  <FileText className="h-6 w-6 text-[#9a1b1f]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-[#9a1b1f] mb-2">
-                    Manual del Docente
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Guía completa sobre metodologías, evaluaciones y
-                    procedimientos académicos para docentes.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-[#9a1b1f] font-medium hover:underline group"
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Descargar PDF
-                  </a>
-                </div>
-              </div>
-            </div>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Briefcase className="h-4 w-4 mr-2" />
+                          Funciones específicas:
+                        </h4>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Supervisar el trabajo de los monitores</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Informar incidencias graves</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Verificar puntualidad en los salones</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Presentar informes de control y avance</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Organizar equipos de trabajo</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Reportar desarrollo del temario</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Comunicar disposiciones institucionales</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                            <span>Participar en reuniones semanales</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-l-[#9a1b1f] hover:shadow-lg transition-all">
-              <div className="flex items-start">
-                <div className="bg-[#f9e6e7] p-3 rounded-full mr-4">
-                  <FileText className="h-6 w-6 text-[#9a1b1f]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-[#9a1b1f] mb-2">
-                    Protocolo de Monitoreo
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Lineamientos y procedimientos para el seguimiento y
-                    evaluación de las actividades académicas.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-[#9a1b1f] font-medium hover:underline group"
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Descargar PDF
-                  </a>
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                          <Clock className="h-4 w-4 mr-2" />
+                          Requisitos:
+                        </h4>
+                        <div className="bg-gray-50 p-3 rounded-lg">
+                          <p className="text-gray-700 text-sm">
+                            Egresados y/o bachilleres universitarios.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col space-y-3">
+                        <a
+                          href="https://forms.google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex items-center group text-sm justify-center"
+                        >
+                          Postular a esta posición
+                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </a>
+
+                        <a
+                          href="#"
+                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
+                        >
+                          Mas Información
+                          <FileText className="h-4 w-4 ml-2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
