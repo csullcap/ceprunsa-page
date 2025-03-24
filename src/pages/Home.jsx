@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
-import {
-  BookOpen,
-  Users,
-  Calendar,
-  ArrowRight,
-  CheckCircle,
-  Star,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { features, admissionProcesses, testimonials } from "../data/home-data";
 
 const Home = () => {
   return (
@@ -26,8 +20,8 @@ const Home = () => {
                 a la Universidad Nacional de San Agustín de Arequipa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/procesos" className="btn-primary text-center">
-                  Conoce nuestros procesos de admisión
+                <Link to="/programas" className="btn-primary text-center">
+                  Conoce nuestros programas
                 </Link>
                 <Link to="/contacto" className="btn-secondary text-center">
                   Contáctanos
@@ -55,44 +49,22 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title">¿Por qué elegirnos?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card border-t-4 border-t-[#9a1b1f]">
-              <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <BookOpen className="h-12 w-12 text-[#9a1b1f]" />
+            {features.map((feature) => (
+              <div
+                key={feature.id}
+                className="card border-t-4 border-t-[#9a1b1f]"
+              >
+                <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                  <feature.icon className="h-12 w-12 text-[#9a1b1f]" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-center">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-center mb-2">
-                Material Exclusivo
-              </h3>
-              <p className="text-gray-600 text-center">
-                Material didáctico actualizado y diseñado por docentes
-                universitarios.
-              </p>
-            </div>
-
-            <div className="card border-t-4 border-t-[#9a1b1f]">
-              <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Users className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2">
-                Docentes Calificados
-              </h3>
-              <p className="text-gray-600 text-center">
-                Profesores con amplia experiencia en preparación
-                preuniversitaria.
-              </p>
-            </div>
-
-            <div className="card border-t-4 border-t-[#9a1b1f]">
-              <div className="flex justify-center mb-4 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Calendar className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2">
-                Horarios Flexibles
-              </h3>
-              <p className="text-gray-600 text-center">
-                Diferentes turnos y modalidades para adaptarse a tus
-                necesidades.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -103,115 +75,34 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title">Nuestros Procesos de Admisión</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="highlight-card">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#9a1b1f] text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                  <span className="font-bold">1</span>
+            {admissionProcesses.map((process) => (
+              <div key={process.id} className="highlight-card">
+                <div className="flex items-center mb-4">
+                  <div className="bg-[#9a1b1f] text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                    <span className="font-bold">{process.number}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#9a1b1f]">
+                    {process.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Ceprunsa Fase I y II
-                </h3>
+                <p className="text-gray-600 mb-4">{process.description}</p>
+                <ul className="mb-6 space-y-2">
+                  {process.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/procesos"
+                  className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
+                >
+                  Más información
+                  <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
-              <p className="text-gray-600 mb-4">
-                Proceso regular dirigido a estudiantes egresados y cursantes del
-                último año de secundaria, con clases virtuales y exámenes
-                presenciales.
-              </p>
-              <ul className="mb-6 space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Preparación integral en todas las materias</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Simulacros tipo examen de admisión</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Duración de 10 semanas</span>
-                </li>
-              </ul>
-              <Link
-                to="/procesos"
-                className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
-              >
-                Más información
-                <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="highlight-card">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#9a1b1f] text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                  <span className="font-bold">2</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Ceprunsa Ciclo Quintos
-                </h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Exclusivo para estudiantes de 5to de secundaria, con horarios
-                compatibles con sus estudios escolares.
-              </p>
-              <ul className="mb-6 space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Preparación integral en todas las materias</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Horarios adaptados a los escolares</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Simulacros tipo examen de admisión</span>
-                </li>
-              </ul>
-              <Link
-                to="/procesos"
-                className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
-              >
-                Más información
-                <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="highlight-card">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#9a1b1f] text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                  <span className="font-bold">3</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#9a1b1f]">
-                  Extraordinario
-                </h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Proceso especial para postulantes con perfiles específicos,
-                reconociendo méritos académicos, deportivos y situaciones
-                particulares.
-              </p>
-              <ul className="mb-6 space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Titulados y primeros puestos</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Deportistas destacados</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2" />
-                  <span>Bachillerato Internacional y COAR</span>
-                </li>
-              </ul>
-              <Link
-                to="/procesos"
-                className="text-[#9a1b1f] font-medium hover:underline flex items-center group"
-              >
-                Más información
-                <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -221,67 +112,29 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title">Lo que dicen nuestros estudiantes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card relative">
-              <div className="absolute -top-3 -right-3 bg-[#9a1b1f] text-white p-2 rounded-full">
-                <Star className="h-5 w-5" />
-              </div>
-              <p className="italic text-gray-600 mb-4 border-l-4 border-[#9a1b1f] pl-4">
-                "Gracias a CEPRUNSA pude ingresar a la carrera de Medicina en mi
-                primer intento. Los profesores son excelentes y el material de
-                estudio es muy completo."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-[#f9e6e7] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#9a1b1f] font-bold">MR</span>
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="card relative">
+                <div className="absolute -top-3 -right-3 bg-[#9a1b1f] text-white p-2 rounded-full">
+                  <Star className="h-5 w-5" />
                 </div>
-                <div>
-                  <h4 className="font-bold">María Rodríguez</h4>
-                  <p className="text-sm text-gray-500">Medicina - UNSA</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="card relative">
-              <div className="absolute -top-3 -right-3 bg-[#9a1b1f] text-white p-2 rounded-full">
-                <Star className="h-5 w-5" />
-              </div>
-              <p className="italic text-gray-600 mb-4 border-l-4 border-[#9a1b1f] pl-4">
-                "El método de enseñanza de CEPRUNSA es muy efectivo. Los
-                simulacros semanales me ayudaron a familiarizarme con el examen
-                real y a mejorar mi rendimiento."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-[#f9e6e7] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#9a1b1f] font-bold">CM</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Carlos Mendoza</h4>
-                  <p className="text-sm text-gray-500">
-                    Ingeniería Civil - UNSA
-                  </p>
+                <p className="italic text-gray-600 mb-4 border-l-4 border-[#9a1b1f] pl-4">
+                  "{testimonial.testimonial}"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-[#f9e6e7] rounded-full mr-4 flex items-center justify-center">
+                    <span className="text-[#9a1b1f] font-bold">
+                      {testimonial.initials}
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.career}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="card relative">
-              <div className="absolute -top-3 -right-3 bg-[#9a1b1f] text-white p-2 rounded-full">
-                <Star className="h-5 w-5" />
-              </div>
-              <p className="italic text-gray-600 mb-4 border-l-4 border-[#9a1b1f] pl-4">
-                "Lo que más me gustó de CEPRUNSA fue el apoyo constante de los
-                profesores. Siempre estaban disponibles para resolver mis dudas
-                y me motivaron a seguir adelante."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-[#f9e6e7] rounded-full mr-4 flex items-center justify-center">
-                  <span className="text-[#9a1b1f] font-bold">AG</span>
-                </div>
-                <div>
-                  <h4 className="font-bold">Ana Gutiérrez</h4>
-                  <p className="text-sm text-gray-500">Derecho - UNSA</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

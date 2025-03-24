@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 import {
-  Users,
-  ClipboardCheck,
   FileText,
   ExternalLink,
   ChevronRight,
   CheckCircle,
   Briefcase,
-  GraduationCap,
   Eye,
   Clock,
 } from "lucide-react";
+import { jobPositions } from "../data/careers-data";
 
 const Careers = () => {
   return (
@@ -80,351 +78,95 @@ const Careers = () => {
           <h2 className="section-title mb-12">Posiciones Disponibles</h2>
 
           <div className="space-y-8 max-w-6xl mx-auto">
-            {/* Position 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
-              <div className="flex flex-col md:flex-row">
-                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
-                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
-                    <GraduationCap className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white text-center">
-                    Personal de Servicio de Enseñanza
-                  </h3>
-                </div>
-
-                <div className="p-6 md:w-3/4">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="lg:col-span-2">
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Eye className="h-4 w-4 mr-2" />
-                          Misión del puesto:
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          Brindar un servicio de enseñanza de calidad para la
-                          preparación académico de los postulantes.
-                        </p>
-                      </div>
-
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Briefcase className="h-4 w-4 mr-2" />
-                          Funciones específicas:
-                        </h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Planificar y ejecutar los temas asignados
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Elaborar material académico y evaluaciones
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Desarrollar estrategias de enseñanza-aprendizaje
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Elaborar preguntas para exámenes simulacros
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Entregar material académico al área
-                              correspondiente
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Cumplir con la planificación académica establecida
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
+            {jobPositions.map((position) => (
+              <div
+                key={position.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all"
+              >
+                <div className="flex flex-col md:flex-row">
+                  <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
+                    <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
+                      {position.icon && (
+                        <position.icon className="h-8 w-8 text-white" />
+                      )}
                     </div>
+                    <h3 className="text-xl font-bold text-white text-center">
+                      {position.title}
+                    </h3>
+                  </div>
 
-                    <div>
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Clock className="h-4 w-4 mr-2" />
-                          Requisitos:
-                        </h4>
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <ul className="space-y-2 text-gray-700 text-sm">
-                            <li className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                              <span>Experiencia en enseñanza y/o docencia</span>
-                            </li>
-                            <li className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                              <span>
-                                Bachiller universitario y/o titulado registrado
-                                en SUNEDU o titulado de instituto pedagógico
-                                registrado en DRE
-                              </span>
-                            </li>
-                            <li className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                              <span>
-                                Cursos en estrategias pedagógicas y recursos
-                                educativos digitales
-                              </span>
-                            </li>
+                  <div className="p-6 md:w-3/4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                      <div className="lg:col-span-2">
+                        <div className="mb-4">
+                          <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                            <Eye className="h-4 w-4 mr-2" />
+                            Misión del puesto:
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            {position.mission}
+                          </p>
+                        </div>
+
+                        <div className="mb-4">
+                          <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                            <Briefcase className="h-4 w-4 mr-2" />
+                            Funciones específicas:
+                          </h4>
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
+                            {position.functions.map((func, index) => (
+                              <li key={index} className="flex items-start">
+                                <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                                <span>{func}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
 
-                      <div className="flex flex-col space-y-3">
-                        <a
-                          href="https://forms.google.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary inline-flex items-center group text-sm justify-center"
-                        >
-                          Postular a esta posición
-                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                      <div>
+                        <div className="mb-4">
+                          <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
+                            <Clock className="h-4 w-4 mr-2" />
+                            Requisitos:
+                          </h4>
+                          <div className="bg-gray-50 p-3 rounded-lg">
+                            <ul className="space-y-2 text-gray-700 text-sm">
+                              {position.requirements.map((req, index) => (
+                                <li key={index} className="flex items-start">
+                                  <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
+                                  <span>{req}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
 
-                        <a
-                          href="#"
-                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
-                        >
-                          Mas Información
-                          <FileText className="h-4 w-4 ml-2" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                        <div className="flex flex-col space-y-3">
+                          <a
+                            href={position.applicationFormUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary inline-flex items-center group text-sm justify-center"
+                          >
+                            Postular a esta posición
+                            <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </a>
 
-            {/* Position 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
-              <div className="flex flex-col md:flex-row">
-                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
-                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white text-center">
-                    Personal de Servicio de Monitoreo
-                  </h3>
-                </div>
-
-                <div className="p-6 md:w-3/4">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="lg:col-span-2">
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Eye className="h-4 w-4 mr-2" />
-                          Misión del puesto:
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          Brindar soporte administrativo en el desarrollo de las
-                          actividades diarias académicas en el proceso de
-                          admisión correspondiente del CEPRUNSA.
-                        </p>
-                      </div>
-
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Briefcase className="h-4 w-4 mr-2" />
-                          Funciones específicas:
-                        </h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Programar sesiones virtuales del salón asignado
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Orientar a postulantes sobre procedimientos
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Verificar cumplimiento del contenido temático
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Monitorear avance curricular</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Mantener el orden en las sesiones de clase
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>
-                              Controlar asistencia de docentes y estudiantes
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Clock className="h-4 w-4 mr-2" />
-                          Requisitos:
-                        </h4>
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <p className="text-gray-700 text-sm">
-                            Ser alumno regular, mayor de edad, con matrícula
-                            vigente de la Universidad Nacional de San Agustín
-                            que no presente otros beneficios del estado.
-                          </p>
+                          <a
+                            href={position.documentUrl}
+                            className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
+                          >
+                            Descargar SÚMATE AL CEPRUNSA
+                            <FileText className="h-4 w-4 ml-2" />
+                          </a>
                         </div>
                       </div>
-
-                      <div className="flex flex-col space-y-3">
-                        <a
-                          href="https://forms.google.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary inline-flex items-center group text-sm justify-center"
-                        >
-                          Postular a esta posición
-                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </a>
-
-                        <a
-                          href="#"
-                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
-                        >
-                          Mas Información
-                          <FileText className="h-4 w-4 ml-2" />
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Position 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
-              <div className="flex flex-col md:flex-row">
-                <div className="bg-[#9a1b1f] p-6 md:w-1/4 flex flex-col items-center justify-center">
-                  <div className="flex justify-center mb-4 bg-white/10 p-4 rounded-full w-16 h-16 backdrop-blur-sm">
-                    <ClipboardCheck className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white text-center">
-                    Coordinador de Monitoreo
-                  </h3>
-                </div>
-
-                <div className="p-6 md:w-3/4">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="lg:col-span-2">
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Eye className="h-4 w-4 mr-2" />
-                          Misión del puesto:
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          Asegurar el correcto desempeño del equipo de monitores
-                          y el cumplimiento de los estándares de monitoreo.
-                        </p>
-                      </div>
-
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Briefcase className="h-4 w-4 mr-2" />
-                          Funciones específicas:
-                        </h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700 text-sm">
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Supervisar el trabajo de los monitores</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Informar incidencias graves</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Verificar puntualidad en los salones</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Presentar informes de control y avance</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Organizar equipos de trabajo</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Reportar desarrollo del temario</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Comunicar disposiciones institucionales</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-[#9a1b1f] mr-2 mt-1 flex-shrink-0" />
-                            <span>Participar en reuniones semanales</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="mb-4">
-                        <h4 className="font-bold text-[#9a1b1f] mb-2 flex items-center">
-                          <Clock className="h-4 w-4 mr-2" />
-                          Requisitos:
-                        </h4>
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <p className="text-gray-700 text-sm">
-                            Egresados y/o bachilleres universitarios.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col space-y-3">
-                        <a
-                          href="https://forms.google.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary inline-flex items-center group text-sm justify-center"
-                        >
-                          Postular a esta posición
-                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </a>
-
-                        <a
-                          href="#"
-                          className="text-[#9a1b1f] border border-[#9a1b1f] inline-flex items-center group text-sm justify-center py-2 rounded-md hover:bg-[#f9e6e7] transition-colors"
-                        >
-                          Mas Información
-                          <FileText className="h-4 w-4 ml-2" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

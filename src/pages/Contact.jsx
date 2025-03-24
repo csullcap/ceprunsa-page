@@ -14,10 +14,73 @@ import {
   AlertCircle,
   CheckCircle,
 } from "lucide-react";
+import { faqs, contactInfo, socialMedia } from "../data/contact-data";
 
 // Componente de acordeón para preguntas frecuentes
 const FaqAccordion = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const renderAnswer = () => {
+    if (typeof answer === "string") {
+      return <p className="text-gray-700">{answer}</p>;
+    }
+
+    if (answer.type === "list") {
+      return (
+        <div className="space-y-2">
+          <p>{answer.intro}</p>
+          {answer.listType === "ordered" ? (
+            <ol className="list-decimal pl-5 space-y-1">
+              {answer.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ol>
+          ) : (
+            <ul className="list-disc pl-5 space-y-1">
+              {answer.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    }
+
+    if (answer.type === "complex") {
+      return (
+        <div className="space-y-2">
+          {answer.content.map((item, index) => {
+            if (item.type === "paragraph") {
+              return (
+                <p
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: item.text }}
+                />
+              );
+            }
+            if (item.type === "list") {
+              return item.listType === "ordered" ? (
+                <ol key={index} className="list-decimal pl-5 space-y-1">
+                  {item.items.map((listItem, i) => (
+                    <li key={i}>{listItem}</li>
+                  ))}
+                </ol>
+              ) : (
+                <ul key={index} className="list-disc pl-5 space-y-1">
+                  {item.items.map((listItem, i) => (
+                    <li key={i}>{listItem}</li>
+                  ))}
+                </ul>
+              );
+            }
+            return null;
+          })}
+        </div>
+      );
+    }
+
+    return <p className="text-gray-700">No hay información disponible.</p>;
+  };
 
   return (
     <div
@@ -65,11 +128,7 @@ const FaqAccordion = ({ question, answer }) => {
         }`}
       >
         <div className="p-4 bg-white border-t border-gray-50">
-          {typeof answer === "string" ? (
-            <p className="text-gray-700">{answer}</p>
-          ) : (
-            answer
-          )}
+          {renderAnswer()}
         </div>
       </div>
     </div>
@@ -131,6 +190,20 @@ const Contact = () => {
     }, 1500);
   };
 
+  // Función para obtener el componente de icono correcto
+  const getIconComponent = (iconName) => {
+    const icons = {
+      MapPin,
+      Phone,
+      Mail,
+      Clock,
+      Facebook,
+      Instagram,
+      Youtube,
+    };
+    return icons[iconName] || null;
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -164,56 +237,31 @@ const Contact = () => {
                   Información de Contacto
                 </h2>
                 <div className="space-y-6">
-                  <div className="flex items-start group hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <div className="bg-[#9a1b1f]/10 p-3 rounded-full group-hover:bg-[#9a1b1f] group-hover:text-white transition-colors">
-                      <MapPin className="h-6 w-6 text-[#9a1b1f] group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold mb-1 text-gray-800">
-                        Dirección
-                      </h3>
-                      <p className="text-gray-700">
-                        Calle San Agustín 108 - Arequipa
-                      </p>
-                      <p className="text-gray-700">Campus Universitario UNSA</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start group hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <div className="bg-[#9a1b1f]/10 p-3 rounded-full group-hover:bg-[#9a1b1f] group-hover:text-white transition-colors">
-                      <Phone className="h-6 w-6 text-[#9a1b1f] group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold mb-1 text-gray-800">Teléfono</h3>
-                      <p className="text-gray-700">
-                        054-391911 Anexos 1422-1423-1424
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start group hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <div className="bg-[#9a1b1f]/10 p-3 rounded-full group-hover:bg-[#9a1b1f] group-hover:text-white transition-colors">
-                      <Mail className="h-6 w-6 text-[#9a1b1f] group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold mb-1 text-gray-800">Email</h3>
-                      <p className="text-gray-700">ceprunsa@unsa.edu.pe</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start group hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                    <div className="bg-[#9a1b1f]/10 p-3 rounded-full group-hover:bg-[#9a1b1f] group-hover:text-white transition-colors">
-                      <Clock className="h-6 w-6 text-[#9a1b1f] group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold mb-1 text-gray-800">
-                        Horario de Atención
-                      </h3>
-                      <p className="text-gray-700">
-                        Lunes a Viernes: 8:30 AM - 3:30 PM
-                      </p>
-                    </div>
-                  </div>
+                  {contactInfo.map((info) => {
+                    const IconComponent = getIconComponent(info.icon);
+                    return (
+                      <div
+                        key={info.id}
+                        className="flex items-start group hover:bg-gray-50 p-3 rounded-lg transition-colors"
+                      >
+                        <div className="bg-[#9a1b1f]/10 p-3 rounded-full group-hover:bg-[#9a1b1f] group-hover:text-white transition-colors">
+                          {IconComponent && (
+                            <IconComponent className="h-6 w-6 text-[#9a1b1f] group-hover:text-white transition-colors" />
+                          )}
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="font-bold mb-1 text-gray-800">
+                            {info.title}
+                          </h3>
+                          {info.details.map((detail, index) => (
+                            <p key={index} className="text-gray-700">
+                              {detail}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="mt-8 bg-gray-50 p-4 rounded-lg border border-gray-100">
@@ -221,30 +269,22 @@ const Contact = () => {
                     Síguenos en redes sociales
                   </h3>
                   <div className="flex space-x-4">
-                    <a
-                      href="https://www.facebook.com/ceprunsaoficial/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-[#9a1b1f] to-[#7a1518] text-white p-3 rounded-full hover:shadow-lg transition-all transform hover:-translate-y-1"
-                    >
-                      <Facebook className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-[#9a1b1f] to-[#7a1518] text-white p-3 rounded-full hover:shadow-lg transition-all transform hover:-translate-y-1"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@EventosCeprunsa/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-[#9a1b1f] to-[#7a1518] text-white p-3 rounded-full hover:shadow-lg transition-all transform hover:-translate-y-1"
-                    >
-                      <Youtube className="h-5 w-5" />
-                    </a>
+                    {socialMedia.map((social) => {
+                      const IconComponent = getIconComponent(social.icon);
+                      return (
+                        <a
+                          key={social.id}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-gradient-to-r from-[#9a1b1f] to-[#7a1518] text-white p-3 rounded-full hover:shadow-lg transition-all transform hover:-translate-y-1"
+                        >
+                          {IconComponent && (
+                            <IconComponent className="h-5 w-5" />
+                          )}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -475,71 +515,13 @@ const Contact = () => {
             <h2 className="section-title mb-0">Preguntas frecuentes</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
-            <FaqAccordion
-              question="¿Cómo puedo ingresar a las clases del CEPRUNSA?"
-              answer={
-                <div className="space-y-2">
-                  <p>Para ingresar a las clases, sigue estos pasos:</p>
-                  <ol className="list-decimal pl-5 space-y-1">
-                    <li>
-                      Utiliza la cuenta CEPRUNSA que se te brindó al momento de
-                      tu inscripción.
-                    </li>
-                    <li>
-                      Ingresa a la plataforma Google Classroom con dicha cuenta.
-                    </li>
-                    <li>
-                      Desde el Classroom, accede al enlace de Google Meet
-                      correspondiente para unirte a la sesión.
-                    </li>
-                  </ol>
-                </div>
-              }
-            />
-
-            <FaqAccordion
-              question="¿Cómo puedo realizar el pago de las cuotas?"
-              answer={
-                <div className="space-y-2">
-                  <p>
-                    El pago de las cuotas se realiza con el código brindado al
-                    momento de tu inscripción. Puedes realizarlo a través de
-                    cualquier canal del BCP, como:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Agentes BCP</li>
-                    <li>Banca móvil</li>
-                    <li>Banca por internet</li>
-                    <li>Yape</li>
-                  </ul>
-                  <p>
-                    En todos estos canales, utiliza la cuenta{" "}
-                    <strong>UNSA-VIRTUAL</strong> para completar la transacción.
-                  </p>
-                </div>
-              }
-            />
-
-            <FaqAccordion
-              question="¿Puedo retirarme o solicitar la exoneración de cuotas del CEPRUNSA?"
-              answer={
-                <div className="space-y-2">
-                  <p>
-                    Según el Reglamento de Admisión, aprobado con Resolución de
-                    Consejo Universitario N° 219-2024, de fecha 21 de mayo del
-                    2024, establece:
-                  </p>
-                  <p>
-                    <strong>Artículo 64°:</strong> El postulante no puede
-                    solicitar, bajo ningún concepto:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>64.1. Devolución y/o reembolso del monto abonado.</li>
-                    <li>64.2. Exoneración de deuda.</li>
-                  </ul>
-                </div>
-              }
-            />
+            {faqs.map((faq) => (
+              <FaqAccordion
+                key={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
           </div>
         </div>
       </section>

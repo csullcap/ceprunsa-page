@@ -1,22 +1,9 @@
+import { Target, Eye } from "lucide-react";
 import {
-  Award,
-  Heart,
-  Shield,
-  Lightbulb,
-  Target,
-  Eye,
-  Book,
-  Workflow,
-  BarChart,
-  GraduationCap,
-  CheckCircle,
-  Clock,
-  Users,
-  Bookmark,
-  Flag,
-  Scale,
-  Handshake,
-} from "lucide-react";
+  values,
+  qualityPolicyCommitments,
+  authorities,
+} from "../data/about-data";
 
 const About = () => {
   return (
@@ -166,81 +153,18 @@ const About = () => {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <Book className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">Excelencia Académica</h4>
+              {qualityPolicyCommitments.map((commitment) => (
+                <div
+                  key={commitment.id}
+                  className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100"
+                >
+                  <div className="flex items-center mb-3">
+                    <commitment.icon className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
+                    <h4 className="font-bold text-lg">{commitment.title}</h4>
+                  </div>
+                  <p className="text-gray-700">{commitment.description}</p>
                 </div>
-                <p className="text-gray-700">
-                  Ofrecer una enseñanza de alta calidad que promueva el
-                  desarrollo de competencias y habilidades necesarias para el
-                  éxito académico y personal.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <Heart className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">
-                    Apoyo Integral al Estudiante
-                  </h4>
-                </div>
-                <p className="text-gray-700">
-                  Brindar un apoyo integral a nuestros estudiantes, incluyendo
-                  orientación vocacional, apoyo emocional y asesoramiento
-                  académico.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <Shield className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">Cumplimiento Normativo</h4>
-                </div>
-                <p className="text-gray-700">
-                  Cumplir con todos los requisitos legales, reglamentarios y
-                  contractuales aplicables a nuestras actividades, promoviendo
-                  un ambiente de trabajo seguro y respetuoso.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <Workflow className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">Mejora Continua</h4>
-                </div>
-                <p className="text-gray-700">
-                  Buscar la mejora continua en todos los aspectos de nuestra
-                  institución, identificando oportunidades de mejora y actuando
-                  proactivamente para implementar soluciones efectivas.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <BarChart className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">Atención a la Demanda</h4>
-                </div>
-                <p className="text-gray-700">
-                  Gestionar de manera eficiente y efectiva la alta demanda de
-                  nuestros servicios, optimizando nuestros recursos para
-                  garantizar una atención de calidad a todos nuestros
-                  estudiantes.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center mb-3">
-                  <GraduationCap className="h-6 w-6 text-[#9a1b1f] mr-3 flex-shrink-0" />
-                  <h4 className="font-bold text-lg">Desarrollo Profesional</h4>
-                </div>
-                <p className="text-gray-700">
-                  Valorar y promover el desarrollo profesional de nuestro
-                  personal, proporcionando oportunidades de formación y
-                  capacitación que les permitan mejorar sus habilidades y
-                  mantenerse actualizados en su campo de especialización.
-                </p>
-              </div>
+              ))}
             </div>
 
             <p className="text-gray-700 mb-8 text-center italic">
@@ -269,154 +193,20 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="section-title">Nuestros Valores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Award className="h-12 w-12 text-[#9a1b1f]" />
+            {values.map((value) => (
+              <div
+                key={value.id}
+                className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]"
+              >
+                <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
+                  <value.icon className="h-12 w-12 text-[#9a1b1f]" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 text-center">{value.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Excelencia académica
-              </h3>
-              <p className="text-gray-600 text-center">
-                Fomentar el compromiso con la calidad en la enseñanza y el
-                aprendizaje, promoviendo el esfuerzo y la dedicación hacia el
-                logro de metas académicas.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Shield className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Confianza
-              </h3>
-              <p className="text-gray-600 text-center">
-                Promover la seguridad y la credibilidad en las relaciones
-                interpersonales, basadas en la honestidad y el respeto mutuo.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Heart className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Empatía
-              </h3>
-              <p className="text-gray-600 text-center">
-                Fomentar la comprensión y la empatía hacia los demás,
-                promoviendo un ambiente de respeto, compasión y apoyo mutuo
-                entre los estudiantes y el personal del CEPRUNSA.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Lightbulb className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Innovación
-              </h3>
-              <p className="text-gray-600 text-center">
-                Fomentar la creatividad y el pensamiento original para generar
-                nuevas ideas y soluciones para los desafíos presentes.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <CheckCircle className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Responsabilidad
-              </h3>
-              <p className="text-gray-600 text-center">
-                Cumplir con las obligaciones académicas y laborales con ética y
-                eficiencia. Promover el sentido del deber en toda la comunidad.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Clock className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Puntualidad
-              </h3>
-              <p className="text-gray-600 text-center">
-                Respetar el tiempo propio y ajeno, asegurando la puntualidad en
-                todas las actividades. Cumplir con los compromisos a tiempo.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Users className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Trabajo en equipo
-              </h3>
-              <p className="text-gray-600 text-center">
-                Fomentar la colaboración y cooperación entre todos los miembros.
-                Trabajar juntos para alcanzar metas comunes.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Bookmark className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Compromiso
-              </h3>
-              <p className="text-gray-600 text-center">
-                Dedicarse a los valores y objetivos de CEPRUNSA con
-                responsabilidad. Asumir un compromiso personal y colectivo en el
-                proceso educativo.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Handshake className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Respeto
-              </h3>
-              <p className="text-gray-600 text-center">
-                Fomentar la consideración y el trato digno hacia los demás,
-                valorando la diversidad de ideas y opiniones. Promover un
-                ambiente de convivencia basado en el respeto mutuo.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Scale className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Probidad
-              </h3>
-              <p className="text-gray-600 text-center">
-                Actuar con integridad y honestidad en todas las acciones y
-                decisiones. Mantener una conducta ética que refleje los
-                principios de transparencia y rectitud.
-              </p>
-            </div>
-
-            <div className="card bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:translate-y-[-5px]">
-              <div className="flex justify-center mb-6 bg-[#f9e6e7] p-4 rounded-full w-20 h-20 mx-auto">
-                <Flag className="h-12 w-12 text-[#9a1b1f]" />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-2 text-[#9a1b1f]">
-                Lealtad
-              </h3>
-              <p className="text-gray-600 text-center">
-                Ser fiel a los valores y objetivos de CEPRUNSA, mostrando un
-                compromiso constante. Apoyar con sinceridad y confianza a la
-                institución y a sus integrantes.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -428,104 +218,35 @@ const About = () => {
           <h2 className="section-title">Autoridades</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
-              <div className="relative mb-6">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mg.-Arnaldo-Valdivia-Loaiza-WJKoRNZFlxcLBYctFxuYAU22Ebwahz.jpeg"
-                  alt="Mg. Arnaldo Humberto Valdivia Loaiza"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg"
-                />
+            {authorities.map((authority) => (
+              <div
+                key={authority.id}
+                className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50"
+              >
+                <div className="relative mb-6">
+                  <img
+                    src={authority.image || "/placeholder.svg"}
+                    alt={authority.name}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-1">
+                  <a
+                    href={authority.profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-[#9a1b1f]"
+                  >
+                    {authority.name}
+                  </a>
+                </h3>
+                <p className="text-[#9a1b1f] font-semibold text-center mb-4 bg-[#9a1b1f]/10 py-1 px-4 rounded-full mx-auto">
+                  {authority.position}
+                </p>
+                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-4"></div>
+                <p className="text-gray-600 text-sm p-4">{authority.bio}</p>
               </div>
-              <h3 className="text-xl font-bold text-center mb-1">
-                <a
-                  href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=63640"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-[#9a1b1f]"
-                >
-                  Mg. Arnaldo Humberto Valdivia Loaiza
-                </a>
-              </h3>
-              <p className="text-[#9a1b1f] font-semibold text-center mb-4 bg-[#9a1b1f]/10 py-1 px-4 rounded-full mx-auto">
-                COORDINADOR ACADÉMICO
-              </p>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-4"></div>
-              <p className="text-gray-600 text-sm p-4 ">
-                Docente especializado en Filosofía, con una maestría en Docencia
-                Universitaria y Gestión Educativa. Actualmente es docente en la
-                Universidad Nacional de San Agustín, con experiencia previa en
-                diversas universidades peruanas desde 2003. En cuanto a su
-                formación académica, es bachiller y licenciado en Filosofía por
-                la Universidad Nacional de San Agustín de Arequipa, además de
-                haber completado un diplomado en Desarrollo de Habilidades
-                Digitales para el Aprendizaje y programas de formación docente
-                en enseñanza e innovación.
-              </p>
-            </div>
-            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
-              <div className="relative mb-6">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dr.-Maria-Elena-Rojas-Zegarra.jpg-2Q53KaD23rQ5BWytlJ1o5vNkQGOkGt.jpeg"
-                  alt="Dra. Maria Elena Rojas Zegarra"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-1">
-                <a
-                  href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=20316"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-[#9a1b1f]"
-                >
-                  Dra. Maria Elena Rojas Zegarra
-                </a>
-              </h3>
-              <p className="text-[#9a1b1f] font-semibold text-center mb-4 bg-[#9a1b1f]/10 py-1 px-4 rounded-full mx-auto">
-                DIRECTORA
-              </p>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-4"></div>
-              <p className="text-gray-600 text-sm  p-4">
-                Doctora en Psicología por la Universidad Complutense de Madrid.
-                Actualmente, cursa el Máster en Investigación Psicológica por la
-                Universidad Internacional de La Rioja (UNIR), España. Posee un
-                Diplomado Internacional en el Modelo de Terapia Breve de
-                Resolución de Problemas del Brief Therapy Center de Palo Alto,
-                California, y es experta en Psicoterapia Breve para Niños y
-                Adolescentes por la Universidad San Jorge, España.
-              </p>
-            </div>
-
-            <div className="card border-t-4 border-t-[#9a1b1f] bg-gradient-to-b from-white to-gray-50">
-              <div className="relative mb-6">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mg.-Jose-Rojas-Hualpa-1-Acs8aSpgD3EDMJdn8XnzVJxuOFd0go.jpeg"
-                  alt="Mg. Jose Miguel Rojas Hualpa"
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-center mb-1">
-                <a
-                  href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=150092"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-[#9a1b1f]"
-                >
-                  Mg. Jose Miguel Rojas Hualpa
-                </a>
-              </h3>
-              <p className="text-[#9a1b1f] font-semibold text-center mb-4 bg-[#9a1b1f]/10 py-1 px-4 rounded-full mx-auto">
-                COORDINADOR ADMINISTRATIVO
-              </p>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-4"></div>
-              <p className="text-gray-600 text-sm  p-4 ">
-                Posee el grado en Ciencias Biológicas por la Universidad
-                Nacional de San Agustín de Arequipa (2010) y el grado en
-                Ingeniería Ambiental (2018). Es Magíster en Biología Funcional y
-                Molecular por la Universidad Estadual de Campinas (2014). Fue
-                investigador en el Laboratorio de Química de Proteínas de la
-                Universidad Estadual de Campinas (2012 – 2014).
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
